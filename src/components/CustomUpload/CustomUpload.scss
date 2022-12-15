@@ -1,0 +1,32 @@
+.upload{
+    height: 100px;
+}
+.ant-upload-list{
+    text-align: center;
+}
+.ant-upload-list-picture-card .ant-upload-list-item-actions{
+    opacity:1;
+    top:20px;
+    left: 128px;
+}
+.ant-upload-list-picture-card .ant-upload-list-item-actions button svg{
+    color:rgb(224, 78, 78);
+}
+.ant-upload-list-picture-card .ant-upload-list-item-actions a{
+display:none;
+}
+.ant-upload.ant-upload-select-picture-card{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 11px;
+    top: 0;
+    background: transparent;
+    z-index: 2;
+}
+.ant-upload-list-picture-card-container{
+    width: 150px;
+    height: 150px;
+    left: 11px;
+    position: absolute;
+}

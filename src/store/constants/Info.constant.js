@@ -1,0 +1,1 @@
+export const SET_INFO_DATA = "SET_INFO_DATA";
