@@ -137,10 +137,10 @@ function CustomerInfo({ inputInfo, setInputInfo, toggleVisible }) {
       } else {
         let indexUpdate = "";
         indexUpdate = listInfo.findIndex((info) => info.id === inputInfo.id);
-        listInfo[indexUpdate] = { ...data, id: inputInfo.id};
+        listInfo[indexUpdate] = { ...data, id: inputInfo.id };
         dispatch({
           type: SET_INFO_DATA,
-          payload: listInfo
+          payload: listInfo,
         });
         toggleVisible(false);
       }
@@ -245,7 +245,7 @@ function CustomerInfo({ inputInfo, setInputInfo, toggleVisible }) {
                   </Form.Item>
                 </Col>
               </Row>
-              <div style={{ display: "flex", justifyContent: "end"}}>
+              <div style={{ display: "flex", justifyContent: "end" }}>
                 {inputInfo.status !== "save" && (
                   <Popconfirm
                     className="closeButton"
@@ -263,7 +263,7 @@ function CustomerInfo({ inputInfo, setInputInfo, toggleVisible }) {
                   onClick={() => submitForm()}
                   type="primary"
                   className="confirmButton"
-                  style={{ width: "20%", height: "40px", marginLeft:"10px" }}
+                  style={{ width: "20%", height: "40px", marginLeft: "10px" }}
                 >
                   {inputInfo.status === "save" ? "Create info" : "Update info"}
                 </Button>

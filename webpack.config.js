@@ -1,11 +1,12 @@
 const path = require("path");
 // var webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
+const TerserJSPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   performance: {
@@ -48,7 +49,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "bundle.min.js",
-    path: path.join(__dirname, "/build")
+    path: path.join(__dirname, "/build"),
   },
   // mode: 'development',
   module: {
@@ -56,14 +57,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ["babel-loader"],
       },
       {
         test: /\.(sa|sc|c|le)ss$/,
         // use: ["style-loader", "css-loader"]
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -72,14 +73,10 @@ module.exports = {
       minify: true,
       template: "./public/index.html",
       filename: "./index.html",
-      }),
+    }),
     new MiniCssExtractPlugin({
-        filename: "[name].min.css",
-      }),
-      // new webpack.DefinePlugin({
-      //   'process.env': {
-      //     'NODE_ENV': JSON.stringify('production')
-      //   }
-      // })
-  ]
+      filename: "[name].min.css",
+    }),
+    new ESLintPlugin(),
+  ],
 };

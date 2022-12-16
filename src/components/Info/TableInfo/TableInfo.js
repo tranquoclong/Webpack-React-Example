@@ -1,67 +1,67 @@
-import React from 'react';
-import { Table } from 'antd';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { Table } from "antd";
+import { useSelector } from "react-redux";
 
 function TableInfo({ setReview, setVisibleCreate}) {
   const listInfo = useSelector((state) => state.infoReducer.listInfo);
   const columns = [
     {
-      title: 'Avatar',
-      dataIndex: '',
+      title: "Avatar",
+      dataIndex: "",
       render:  (record) =>  <img  src={
         record.avatar === "" || record.avatar === null
           ? "https://wrld-se-prod.b-cdn.net/images/user-empty.svg?width=640&height=640"
           : URL.createObjectURL(record.avatar[0].originFileObj)
       } alt="avatar" style={{width: "100px", height: "100px"}}/>,
-      key: 'x',
+      key: "x",
       ellipsis: true,
-      align: 'center',
+      align: "center",
     },
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
       ellipsis: true,
-      align: 'center',
+      align: "center",
       sorter: (a, b) => a.name.length - b.name.length,
     },
     {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
       ellipsis: true,
-      align: 'center'
+      align: "center"
     },
     {
-      title: 'Phone',
-      dataIndex: 'phone',
-      key: 'phone',
+      title: "Phone",
+      dataIndex: "phone",
+      key: "phone",
       ellipsis: true,
-      align: 'center'
+      align: "center"
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
       ellipsis: true,
-      align: 'center'
+      align: "center"
     },
     {
-      title: 'Hobbies',
-      dataIndex: '',
+      title: "Hobbies",
+      dataIndex: "",
       render:  (record) =>  <span>{record.hobbies === "" ? "pls update hobbies" : record.hobbies}</span>
       ,
-      key: 'x',
+      key: "x",
       ellipsis: true,
-      align: 'center'
+      align: "center"
     },
     {
-      title: 'Birthday',
-      dataIndex: '',
+      title: "Birthday",
+      dataIndex: "",
       render:  (record) =>  <span>{record.birthday === "" ? "pls update birthday" : record.birthday}</span>,
-      key: 'x',
+      key: "x",
       ellipsis: true,
-      align: 'center'
+      align: "center"
     }
   ];
 

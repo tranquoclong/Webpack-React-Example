@@ -53,7 +53,7 @@ function CardInfo({ info, setReview, toggleVisible,}) {
       </div>
       <div className="create-ticket__right">
         <div className="create-right__customer-info">
-        <CustomerInfo inputInfo={info} setInputInfo={setReview} toggleVisible={toggleVisible}/>
+          <CustomerInfo inputInfo={info} setInputInfo={setReview} toggleVisible={toggleVisible}/>
         </div>
       </div>
     </>

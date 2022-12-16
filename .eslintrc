@@ -1,0 +1,43 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "@babel/eslint-parser",
+  "plugins": ["react", "prettier"],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "localStorage": true,
+    "ga": true,
+    "fetch": true,
+    "window": true,
+    "document": true,
+    "Raven": true,
+    "ENV": true
+  },
+  "rules": {
+    "indent": ["error", 2],
+    // "space-before-function-paren": "off"
+    // "react/prefer-stateless-function": "warn",
+    // "react/jsx-one-expression-per-line": "off",
+    "quotes": ["error", "double"],
+    "no-multi-spaces": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/prop-types": "off",
+    "no-undef": "off",
+    "no-console": 0,
+    "react/sort-comp": [
+      1,
+      {
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "render"
+        ]
+      }
+    ]
+  }
+}
